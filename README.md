@@ -25,12 +25,15 @@
 ![Screenshot 2023-06-25 at 11 45 57 PM](https://github.com/CRFitzgerald/Home_Sales/assets/117607189/5ba0a4fb-367c-499a-a249-0621d82cce66)
 
 
-8. I ran my query from step 6 on the cached temporary table, and the run time was computed as 0.4262838363647461 seconds.
+8. I ran my query from step 6 on the cached temporary table, and the run time was computed as 0.4262838363647461 seconds. This is the fastest method.
 
-A partition of the home sales dataset by the "date_built" field is created, and the formatted parquet data is read.
+9. I created a partition of the home sales dataset by the "date_built" field, and the formatted parquet data was read.
 
-A temporary table of the parquet data is created. 
+10. I created a temporary table of the parquet data and called it p_home_sales_p.
 
-The query from step 6 is run on the parquet temporary table, and the run time is computed. 
+11. I ran the query from step 6 on p_home_sales_p, and the run time was computed as 0.7654271125793457 seconds. This is the slowest method.
 
-The "home_sales" temporary table is uncached and verified. 
+I uncached the "home_sales" temporary table and verified it.
+
+![Screenshot 2023-06-25 at 11 59 37 PM](https://github.com/CRFitzgerald/Home_Sales/assets/117607189/825ffe2e-067e-484f-8f70-b7badace8eb0)
+
